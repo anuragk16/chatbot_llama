@@ -19,7 +19,7 @@ def get_ollama_response(user_input):
             st.error(f"Error: {response.status_code}, {response.text}")
     except Exception as e:
         st.error(f"An error occurred: {str(e)}")
-    return None
+    return f"DevNavigator APi is not connecting... : code :{response.status_code}"
 ###################
 
 st.title("AI Chat")
