@@ -1,6 +1,6 @@
 import streamlit as st
 import requests
-
+from time import sleep
 
 
 #############  llm 
@@ -17,6 +17,7 @@ def get_ollama_response(user_input):
             return response.json()["response"]
         else:
             st.error(f"Error: {response.status_code}, {response.text}")
+            sleep(10)
     except Exception as e:
         st.error(f"An error occurred: {str(e)}")
         return f"DevNavigator APi is not connecting... : code :{response.status_code}"
