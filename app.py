@@ -47,13 +47,13 @@ with st.container():
         user_input = st.text_input("Type your message:", placeholder="Type here...", key="user_input")
         submit_button = st.form_submit_button("Send")
 
-        if submit_button and user_input:
-            st.session_state.chat_history.append({"role": "user", "message": user_input})
-            chat_container.chat_message("user", avatar="😎").markdown(user_input)
-            with st.spinner("model working..."):
-                bot_response = get_ollama_response(user_input)
-            st.session_state.chat_history.append({"role": "bot", "message": bot_response})
-            chat_container.chat_message("BOT", avatar="🤖").markdown(bot_response)
-            
-            st.rerun()
+if submit_button and user_input:
+    st.session_state.chat_history.append({"role": "user", "message": user_input})
+    chat_container.chat_message("user", avatar="😎").markdown(user_input)
+    with st.spinner("model working..."):
+        bot_response = get_ollama_response(user_input)
+    st.session_state.chat_history.append({"role": "bot", "message": bot_response})
+    chat_container.chat_message("BOT", avatar="🤖").markdown(bot_response)
+    
+    st.rerun()
     
