@@ -8,7 +8,7 @@ from time import sleep
 if "chat" not in st.session_state:
     st.session_state["chat"] = []
 
-API_URL = "http://192.168.29.201:5001/api/chat"  # Flask API endpoint
+API_URL = "https://cf65-2405-201-5c19-c05a-b436-ddf5-a6d6-4a47.ngrok-free.app/api/chat"  # Flask API endpoint
 
 def get_ollama_response(user_input):
     try:
